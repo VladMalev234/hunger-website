@@ -1,0 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap');
+
+
+@font-face {
+    font-family: 'Banny Round';
+    src: url('../fonts/Banny-BoldRound.eot');
+    src: url('../fonts/Banny-BoldRound.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/Banny-BoldRound.woff') format('woff'),
+    ('../fonts/Banny-BoldRound.woff2') format('woff2'),
+    url('../fonts/Banny-BoldRound.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+@mixin openSans {
+    font-family: 'Open Sans', sans-serif;
+}
+
+@mixin Banny {
+    font-family: 'Banny Round', sans-serif;
+}

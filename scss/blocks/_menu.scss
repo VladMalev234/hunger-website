@@ -1,0 +1,49 @@
+.menu {
+    & li {
+        list-style: none;
+    }
+    & ul {
+        padding: 0;
+    }
+    &-block {
+        position: relative;
+    }
+    &__navigation {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        &-item {
+            padding: 20px 40px;
+            font-size: 12px;
+            font-weight: bold;
+            border-right: 1px solid rgba(51, 51, 51, 0.2);
+            text-transform: uppercase;
+            &:hover {
+                cursor: pointer;
+                box-shadow: inset 0px 0px 2px rgba(0, 0, 0, 0.5);
+            }
+            &:last-child {
+                border: none;
+            }
+        }
+    }
+    &-wrapper {
+        width: 100%;
+        margin-top: 50px;
+        display: flex;
+        justify-content: space-between;
+        &_hidden {
+            position: absolute;
+            opacity: 0;
+            top: 10%;
+        }
+    }
+    &__column{
+        flex-basis: 32%;
+        &-dish {
+            @include Banny;
+            font-weight: 700;
+        }
+    }
+}

@@ -1,0 +1,127 @@
+.header {
+    background: url('/img/header/Group\ 4.png') no-repeat top center / cover;
+    position: relative;
+    overflow: hidden;
+}
+
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.2);
+    z-index: 100;
+    &__wrapp {
+        display: flex;
+        justify-content: space-between;
+        height: 94px;
+    }
+    &__menu {
+       
+        //height: 94px;
+        width: 532px;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        border-bottom:1px solid rgba(255, 255, 255, 0.2);
+
+        &-link {
+            font-size: 12px;
+            text-decoration: none;
+            color: #fff;
+            padding: 4px;
+            border-bottom: 2px solid ;
+            border-color: transparent;
+            transition: all 0.7s ease;
+            
+            &:hover {
+                border-color: #E8C300;
+            }
+        }
+    }
+    &__logo {
+        transform: translateY(20px);
+        z-index: 10;
+    }
+}
+
+.hero{
+    margin-top: 100px;
+    padding-top: 225px;
+    &__wrap {
+        //height: 250px;
+        align-items: center;
+        text-align: center;
+        color: #fff;
+        position: relative;
+        text-transform: uppercase;
+    }
+    &__shedule {
+        font-size: 12px;
+        writing-mode: vertical-lr;
+        transform: rotate(-180deg);
+        left: 0;
+        top: -10px;
+        position: absolute;
+        text-transform: none;
+        white-space: nowrap;
+    }
+    &__social {
+        position: absolute;
+        right: 0;
+        top: -10px;
+        &-button {
+            text-decoration: none;
+            display: block;
+            border-radius: 50%;
+            width: 55px;
+            height: 55px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            margin-bottom: 20px;
+            &:hover {
+                cursor: pointer;
+            }
+            & img {
+                transform: translate(0%, 90%);
+            }
+            &:first-child img {
+                transform: translate(0%, 80%); 
+            } 
+        }
+    }
+    &-header {
+        font-size: 96px;
+        //line-height: 0;
+        margin: 0;
+        @include Banny;
+        &::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 5px;
+            background: $color_1;
+            margin: 30px auto;
+            border-radius: 10px;
+
+        }
+    }
+    &__button {
+        &-click {
+            margin: 0 20px;
+        }
+
+    }
+
+    &__arrow {
+        margin: 82px auto;
+        padding: 10px;
+        border-radius: 50%;
+        max-width: 50px;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        & img {
+            padding: 10px 8px;
+            border-radius: 50%;
+            background: #fff;
+        }
+    }
+}

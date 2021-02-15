@@ -1,0 +1,105 @@
+.specialities {
+    background: url('../../img/specialities/bsckground.png') no-repeat top center/ cover;
+}
+
+
+
+//Слайдер
+.slick {
+    &-slider {
+        
+    }
+    //Огранис=чывающая оболочка
+    &-list {
+        overflow: hidden;
+    }
+//Лента слайдов
+    &-track {
+        display: flex;
+        //overflow: hidden;
+        //justify-content: space-between;
+       
+    }
+    //Слайд
+    &-slide {
+        //Слайд активный
+        &.slick-active {
+
+        }
+        //Слайд основной
+        &.slick-current {
+
+        }
+        //Слайд по центру
+        &.slick-center {
+
+        }
+    }
+    //Стрелка
+    &-arrow {
+          //Стрелка влево
+        &.slick-prev {
+
+        }
+          //Стрелка в право
+        &.slick-next {
+            
+        }
+        //Стрелка ве активная
+        &.slick-disabled {
+
+        }
+    }
+    //Точки
+    &-dots {
+        & li {
+
+        }
+        & button {
+
+        }
+    }
+    
+
+}
+
+
+.slider {
+    &-item {
+        justify-content: center;
+        & .section-item {
+            flex-basis: 44%;
+        }
+    }
+    & .slick {
+        &-arrow {
+        }
+        &-dots {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            & li {
+                list-style: none;
+                margin: 0 10px;
+
+            }
+            & li.slick-active button {
+                background: #fff;
+            }
+            & button {
+                font-size: 0;
+                width: 10px !important;
+                height: 15px !important;
+                background: rgba(255, 255, 255, 0.5);
+                border-radius: 50%;
+                outline: none;
+                &:hover &:active{
+                    outline: none;
+                    border: none;  
+                }
+            }
+        } 
+       
+    }
+
+}
