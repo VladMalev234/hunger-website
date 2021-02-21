@@ -14,9 +14,11 @@ function alertInputTrue(element, closestPerent) {
 }
 
 function alertInputFalse(element, closestPerent, submit) {
+    //console.log(closestPerent.querySelector('.alert'));
     if (closestPerent.querySelector('.alert') == null) {
-        submit.disabled = true;
-        submit.classList.add('disabled-color');
+        //console.log(closestPerent.querySelector('.alert'));
+        closestPerent.parentNode.querySelector('input[type="submit"]').disabled = true;
+        closestPerent.parentNode.querySelector('input[type="submit"]').classList.add('disabled-color');
         // если нет присваеваем значению обводку
         element.classList.add('red-line');
         //создаем элемент
@@ -24,7 +26,7 @@ function alertInputFalse(element, closestPerent, submit) {
         //вставляем его в конец после input 
         element.insertAdjacentElement('afterEnd', divE);
         //записываем Html внутрь div
-        console.log(element.type);
+        //console.log(element.type);
         switch(element.type){
             case 'email':
             divE.innerText = `Поле ${element.type} должно содержать не мение 1 буквы до @ и .`;
@@ -35,6 +37,9 @@ function alertInputFalse(element, closestPerent, submit) {
             case 'tel': 
             divE.innerText = `Поле ${element.type} должно содержать не меньше 10 цифр`;
             break;
+            case 'date' || 'time' :
+            divE.innerHTML = `Поле ${e.target.type} должно быть заполнено`;
+
         }
         //divE.innerHTML = `Поле ${element.type} должно содержать не мение 1 буквы до @ и .`;
         //доюавляем класс со стилями

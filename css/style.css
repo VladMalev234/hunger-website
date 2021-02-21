@@ -360,6 +360,10 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   opacity: 0.5;
 }
 
+.red-line {
+  border: 1px solid red;
+}
+
 #map {
   width: 100%;
   height: 475px;
@@ -369,15 +373,6 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   background: url("/img/header/Group 4.png") no-repeat top center/cover;
   position: relative;
   overflow: hidden;
-}
-
-.navbar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  background: rgba(255, 255, 255, 0.2);
-  z-index: 100;
 }
 
 .navbar__wrapp {
