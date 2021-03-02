@@ -352,7 +352,6 @@ input {
 }
 
 .alert {
-    //text-align: left;
     font-size: 12px;
 }
 
@@ -447,4 +446,14 @@ input {
             }
         }
     }
+}
+
+//row-gap: 10px;
+//column-gap: 10px;"
+
+@supports not (row-gap:10px) {
+ .yes {margin: 5px; }
+}
+@supports (row-gap:10px) {
+    .no {margin: 5px;}
 }
