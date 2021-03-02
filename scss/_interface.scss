@@ -453,18 +453,18 @@ input {
 //row-gap: 10px;
 //column-gap: 10px;"
 
-@supports not (row-gap: 10px) {
- .yes {margin-bottom: 5px;}
+@supports (row-gap: 10px) and (column-gap: 10px) {
+ .form {margin: 5px;}
 }
 
-@supports (row-gap: 10px) {
-    .no {margin-bottom: 5px;}
-}
+//@supports (row-gap: 10px) {
+//    .no {margin-bottom: 5px;}
+//}
 
-@supports not (column-gap: 10px) {
-    .yes {margin-right: 5px;}
-   }
+//@supports not  {
+//    .form {margin-right: 5px;}
+//   }
    
-   @supports (column-gap: 10px) {
-       .no {margin-right: 5px;}
-   }
+//   @supports (column-gap: 10px) {
+//       .no {margin-right: 5px;}
+//   }
