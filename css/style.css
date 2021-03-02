@@ -191,6 +191,11 @@ input {
   padding-left: 20px;
 }
 
+input[type="date"] {
+  display: block;
+  width: 100%;
+}
+
 input[type="date"]::-webkit-datetime-edit-year-field {
   display: none;
 }
@@ -209,6 +214,11 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   width: 100%;
   cursor: pointer;
   height: 100%;
+}
+
+input[type="time"] {
+  display: block;
+  width: 100%;
 }
 
 .select {
@@ -550,6 +560,16 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 }
 
 @media (max-width: 700px) {
+  .section-item {
+    -ms-flex-preferred-size: 90%;
+        flex-basis: 90%;
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
+  }
+  .section-item_text {
+    text-align: center;
+  }
   .form-group {
     -ms-flex-preferred-size: 90%;
         flex-basis: 90%;

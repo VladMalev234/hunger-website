@@ -121,12 +121,16 @@ input {
     outline: none;
     padding-left: 20px;
     //cursor: pointer;
+    &[type="date"]{
+        display:block;
+        width: 100%;}
     &[type="date"]::-webkit-datetime-edit-year-field{display: none;}
     &[type="date"]::-webkit-datetime-edit-month-field::after{content: "/"; display: block;}
     &[type="date"]::-webkit-datetime-edit-text{color: red;}
     &[type="date"]::-webkit-calendar-picker-indicator {background:transparent;
     width: 100%; cursor: pointer; height: 100%;}
-    //&[type="time"]::-webkit-inner-spin-button{display:none;}
+    &[type="time"]{display:block;
+        width: 100%;}
     //&[type="time"]::-webkit-clear-button{display:none;}
 
 }
@@ -416,6 +420,17 @@ input {
 }
 
 @media (max-width: 700px) { 
+
+.section {
+    &-item {
+        flex-basis: 90%;
+        align-self: center;
+        &_text {
+            text-align: center;
+        }
+    }
+}
+
     .form {
         &-group {
             flex-basis: 90%;
