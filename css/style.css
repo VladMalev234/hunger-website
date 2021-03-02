@@ -183,7 +183,7 @@ img {
 
 input {
   height: 60px;
-  width: 100%;
+  width: 100% !important;
   background: #E5E5E5;
   border: none;
   border-radius: 5px;
@@ -589,6 +589,23 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   }
   .form-items-item:last-child {
     padding-left: 0px;
+  }
+}
+
+@media (max-width: 500px) {
+  .section-square {
+    width: 50px;
+    height: 50px;
+    border: 10px solid #E8C300;
+    -webkit-box-shadow: 0px 0px 50px rgba(0, 0, 0, 0.5), inset 0px 0px 50px rgba(0, 0, 0, 0.3);
+            box-shadow: 0px 0px 50px rgba(0, 0, 0, 0.5), inset 0px 0px 50px rgba(0, 0, 0, 0.3);
+    top: 32%;
+  }
+}
+
+@supports (row-gap: 10px) and ((-webkit-column-gap: 10px) or (column-gap: 10px)) {
+  .form {
+    margin: 5px;
   }
 }
 
