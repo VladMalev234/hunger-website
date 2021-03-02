@@ -8,7 +8,6 @@ img {
 
 .section{
     padding: 50px 0;
-
     & li {
         list-style: none;
     }
@@ -20,6 +19,8 @@ img {
         &_even {
             flex-direction: row-reverse;
             color: #fff;
+            &-events {       
+            }
         }
     }
     &-image {
@@ -95,6 +96,8 @@ img {
         }
     }
 }
+
+
 .button {
     width: 200px;
     height: 60px;
@@ -128,6 +131,9 @@ input {
     //&[type="time"]::-webkit-clear-button{display:none;}
 
 }
+
+
+
 .select {
     text-align: left;
     height: 60px;
@@ -257,4 +263,189 @@ input {
 #map {
     width: 100%;
     height: 475px;
+}
+
+
+.alert {
+    text-align: left;
+}
+
+
+
+@media (max-width: 1300px){
+    .section{
+        padding: 40px 0;
+        &-item {
+            flex-basis: 42.8%;
+            align-self: center;
+        }
+        &-square  {
+            width: 200px;
+            height: 200px;
+            &_even {
+                left: -12%;
+            }
+        }
+    }
+
+    .form {
+        &-group {
+            flex-basis: 90%;
+            &_contact {
+                flex-basis: 91.5%; 
+            }
+        }
+        &-input_area {
+            height: 80px;
+        }
+        &-items {
+            flex-wrap: wrap;
+            flex-direction: column-reverse;
+            &-contact {
+                width: 92%;
+                flex-basis: 90%;
+                flex-wrap: wrap;
+                &:first-child {
+                    width: 97%;
+                }
+            }
+            &-item {
+                flex-basis: auto;
+                &:last-child {
+                    padding-left: 0px;
+                }
+            }
+        }
+    }
+}
+
+//  !Задаем после 991px
+@media (max-width: 1110px) {
+    .section{
+        &-wrapp {
+            justify-content: center;
+        }
+        &-item {
+            flex-basis: 42.8%;
+            &__header {
+                font-size: 30px;
+            }
+            &__description {
+                font-size: 16px;
+                margin-bottom: 20px;
+            }
+            &__paragraph {
+                font-size: 12px;
+            }
+        }
+        &-image {
+            max-width: 100%;
+        }
+        &-name {
+            font-size: 10px;
+        }
+        &-square  {
+            width: 150px;
+            height: 150px;
+            border: 15px solid $color_1;
+        }
+    }
+}
+
+.alert {
+    //text-align: left;
+    font-size: 12px;
+}
+
+@media (max-width: 910px) {
+    .section{
+        &-wrapp {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            min-width: 0;
+            &_even {
+                &-events {
+                    flex-direction: column;
+                }
+            }
+        }
+        &-image {
+            max-width: 80%;
+        }
+        &-item {
+            flex-basis: 90%;
+            align-self: center;
+            &_text {
+                text-align: center;
+            }
+            &_image {
+                max-width: 69%;
+            }
+            &__header {
+                &::after {
+                    margin: 10px auto;
+                }
+            }
+            &__description {
+                font-size: 14px;
+                margin-bottom: 0px;
+            }
+            &__paragraph {
+                display: none;
+            }
+        }
+        &-name {
+            font-size: 8px;
+            margin-bottom: 40px;
+        }
+        &-square  {
+            box-shadow: 0px 0px 50px rgba(0, 0, 0, 0.5), inset 0px 0px 50px rgba(0, 0, 0, 0.3);
+            right: -4%;
+            &_even {
+                left: -5%;
+            }
+        }
+        &-footer {
+            font-size: 12px;
+        }
+    }
+}
+
+@media (max-width: 810px) {
+  
+}
+
+@media (max-width: 700px) { 
+    .form {
+        &-group {
+            flex-basis: 90%;
+            &_contact {
+                flex-basis: 91.5%; 
+            }
+        }
+        &-input_area {
+            height: 80px;
+        }
+        &-items {
+            flex-wrap: wrap;
+            flex-direction: column-reverse;
+            &-contact {
+                width: 92%;
+                flex-basis: 90%;
+                flex-wrap: wrap;
+            }
+            &-item {
+                text-align: center;
+                white-space: nowrap;
+                flex-direction: column;
+                flex-basis: 90%;
+                margin-bottom: 10px;
+                &:last-child {
+                    padding-left: 0px;
+                }
+            }
+        }
+    }
 }

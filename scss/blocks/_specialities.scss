@@ -75,6 +75,7 @@
         &-arrow {
         }
         &-dots {
+            padding: 0;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -102,4 +103,29 @@
        
     }
 
+}
+
+
+
+@media (max-width: 1300px){
+    .slider {
+        &-item {
+            justify-content: center;
+            & .section-item {
+                flex-basis: 42%;
+            }
+        }
+    }
+}
+
+//  !Задаем после 991px
+@media (max-width: 1110px) {
+   
+}
+
+@media (max-width: 910px) {
+    .container {
+        max-width: 100%;
+        padding: 0 15px;
+    }
 }

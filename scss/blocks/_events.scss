@@ -26,3 +26,73 @@
     color: $color_1;
     padding-right: 6px;
 }
+
+@media (max-width: 1300px){
+    .events {
+        &__image-text {
+            width: 82.8%;
+            top: 41%;
+            right: -25%;
+        }
+    }
+}
+
+
+@media (max-width: 1110px) {
+    .events {
+        &__image-text {
+            width: 84%;
+            top: 39%;
+            right: -24%;
+            font-size: 20px;
+        }
+    }
+    .fa {
+        color: $color_1;
+        padding-right: 6px;
+    }
+}
+
+@media (max-width: 910px) {
+    .events {
+        &__image-text {
+            width: 82.8%;
+            top: 41%;
+            right: -25%;
+            font-size: 18px;
+            //@include Banny;
+            &_position {
+                left: -26%;
+                transform: rotate(-90deg);
+            }
+        }
+    }
+    .fa {
+        color: $color_1;
+        padding-right: 6px;
+    }
+}
+
+@media (max-width: 810px) {
+    
+}
+
+@media (max-width: 610px) {
+    .events {
+        &__image-text {
+            width: 84%;
+            top: 39%;
+            right: -23%;
+            font-size: 14px;
+            height: 60px;
+            &_position {
+
+            }
+        }
+    }
+    .fa {
+        color: $color_1;
+        padding-right: 6px;
+    }
+}
+

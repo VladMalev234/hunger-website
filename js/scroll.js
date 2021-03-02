@@ -1,25 +1,55 @@
 window.onload = function () {
     const header = document.querySelector('header');
-    console.log(header.scrollTop);
+    const navbar = document.querySelector('.navbar');
+    const navbarLogo = document.querySelector('.navbar__logo')
+    //let getValue;
 
-if (header.scrollHeight - header.scrollTop === header.clientHeight) {
-    console.log("hi");
-}
-document.addEventListener('scroll', ()=> {
-    console.log(header.scrollTop, header.scrollHeight, header.clientHeight, header.clientWidth, header.offsetWidth, header.offsetHeight,);
-    if (header.scrollHeight - header.scrollTop === header.clientHeight) {
-        console.log("hi");
+    navbarLogo.addEventListener('click', ()=> {
+        if( 910 >= (window.innerWidth) ) { 
+        if((!document.querySelector('.navbar__logo-image').classList.contains('rotating') || 
+        !document.querySelector('.menu-header').classList.contains('visible')) && navbar.classList.contains('navbar_view')){
+            console.log('hello');
+            document.querySelector('.navbar__logo-image').classList.add('rotating')
+            document.querySelector('.menu-header').classList.add('visible');
+        } else {
+            console.log('hello2');
+            document.querySelector('.navbar__logo-image').classList.remove('rotating')
+            document.querySelector('.menu-header').classList.remove('visible');
+        }
     }
+})
+
+document.addEventListener('scroll', ()=> {
+   if(isOutOfView(header)) {
+       if(navbar.classList.contains('navbar_view')) {
+
+       } 
+       else navbar.classList.add('navbar_view')
+
+   } else {
+            navbar.classList.remove('navbar_view')
+            document.querySelector('.navbar__logo-image').classList.remove('rotating')
+            document.querySelector('.menu-header').classList.remove('visible');
+}
 })
 }
 
-function isInView(el) {
+function isOutOfView(el) {
     const element = el.getBoundingClientRect();
-    const html = document.documentElement;
+    //const html = document.documentElement;
+    //console.log('element', element);
+    //console.log('elementTop', Math.abs(Math.round(element.top))  );
+    //console.log('elementHeight', Math.round(element.height));
+    ////console.log(html);
+    ////console.log('elementLeft', element.left);
+    //console.log('elementBottom', element.bottom);
+    //console.log('windowInnerHeight', window.innerHeight, 'htmlClientHeight', html.clientHeight);
+    ////console.log('elementRight', element.right);
+    //console.log('windowInnerWidth', window.innerWidth, 'htmlClientWidth', html.clientWidth);
+    //console.log('------------------------------------------------------');
+    //console.log('---------------------------------------------------------');
+//Проверяем закончился ли элемент
     return (
-      element.top >= 0 &&
-      element.left >= 0 &&
-      element.bottom <= (window.innerHeight || html.clientHeight) &&
-      element.right <= (window.innerWidth || html.clientWidth)
+      Math.abs(Math.round(element.top)) >= Math.round(element.height) &&  Math.round(element.bottom) <= 0
     );
   }

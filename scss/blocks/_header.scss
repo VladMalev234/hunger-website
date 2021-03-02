@@ -1,53 +1,62 @@
 .header {
-    background: url('/img/header/Group\ 4.png') no-repeat top center / cover;
+    background: url('/img/header/bg.png') no-repeat top center / cover;
     position: relative;
     overflow: hidden;
 }
 
 .navbar {
-    //position: fixed;
-    //top: 0;
-    //left: 0;
-    //width: 100%;
-    //background: rgba(255, 255, 255, 0.2);
-    //z-index: 100;
+    transition: all 1s ease;
+    &_view{
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background: rgba(22, 17, 11, 0.6);
+        z-index: 100;
+    }
+ 
     &__wrapp {
         display: flex;
         justify-content: space-between;
-        height: 94px;
+        align-self: center;
+        height: 100px;
     }
     &__menu {
-       
-        //height: 94px;
         width: 532px;
         display: flex;
         justify-content: space-around;
         align-items: center;
-        border-bottom:1px solid rgba(255, 255, 255, 0.2);
-
+        align-self: center;
         &-link {
             font-size: 12px;
             text-decoration: none;
             color: #fff;
             padding: 4px;
-            border-bottom: 2px solid ;
-            border-color: transparent;
-            transition: all 0.7s ease;
-            
+            border-bottom: 2px solid transparent;
+            transition: all 0.6s ease;
             &:hover {
-                border-color: #E8C300;
+                border-bottom:  2px solid #E8C300;
             }
         }
     }
     &__logo {
-        transform: translateY(20px);
+        margin: auto;
+        transform: translateY(35px);
         z-index: 10;
+        position: relative;
+        &-image {
+            position: relative;
+            transition: all 0.5s ease-in-out 0s;
+        }
     }
 }
 
+.rotating {
+    transform: rotate(180deg);
+}
+
 .hero{
-    margin-top: 100px;
-    padding-top: 225px;
+    padding-top: 230px;
     &__wrap {
         //height: 250px;
         align-items: center;
@@ -67,6 +76,7 @@
         white-space: nowrap;
     }
     &__social {
+        padding: 0;
         position: absolute;
         right: 0;
         top: -10px;
@@ -111,7 +121,6 @@
         }
 
     }
-
     &__arrow {
         margin: 82px auto;
         padding: 10px;
@@ -124,4 +133,209 @@
             background: #fff;
         }
     }
+}
+
+
+.menu-header {
+    width: 100%;
+    position: fixed;
+    top: 94px;
+    left: 0;
+    padding: 16px 0px;
+    z-index: 100;
+    transition: 0.2s ease;
+    background: linear-gradient( 130deg, rgba(70,40,40, 0.6) 0%, rgba(0,80,113, 0.6) 100%);
+    opacity: 0;
+    transform: translateY(-200%);
+    &-navigation {
+        display: flex;
+        text-transform: uppercase;
+        justify-content: space-between;
+        text-align: center;
+    }
+    &__wrapper {
+        flex-basis: 42%;
+        display: flex;
+        justify-content: space-between;
+    }
+    &-link {
+        color: #fff;
+        text-decoration: none;
+        padding: 10px 5px;
+        font-size: 13px;
+        &:hover {
+            background-color: rgba(255, 255, 255, .14);
+            border-radius: 3px;
+        }
+    }
+  }
+
+.visible {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+
+@media (max-width: 1300px){
+    .navbar {
+        &__menu {
+            max-width: 532px;
+            &-link {
+                font-size: 10px;
+                padding: 3px;
+            }
+        }
+    }
+    .hero{
+        &__shedule {
+             left: 55px;
+        }
+        &__social {
+            right: 45px;
+            &-button {
+                width: 45px;
+                height: 45px;
+                & img {
+                    transform: translate(0%, 70%);
+                }
+                &:first-child img {
+                    transform: translate(0%, 38%); 
+                } 
+            }
+        }
+        &-header {
+            font-size: 76px;
+        }
+        &__button {
+            &-click {
+                margin: 0 15px;
+            }
+        }
+        &__arrow {
+            & img {
+                padding: 9px 8px;
+            }
+        }
+        &__logo {
+            transform: translateY(35px);
+            z-index: 10;
+            &-image {
+                width: 120px;
+                height: 120px;
+            }
+        }
+    }
+}
+
+//  !Задаем после 991px
+@media (max-width: 1110px) {
+    .navbar {
+        &__wrapp {
+            display: flex;
+            justify-content: space-between;
+            height: 84px;
+        }
+        &__menu {
+            max-width: 480px;
+        }
+        &__logo {
+            transform: translateY(30px);
+        }
+    }
+
+    .hero{
+        padding-top: 200px;
+        &__social {
+            &-button {
+                border: none;
+            }
+        }
+        &-header {
+            font-size: 70px;
+        }
+    }
+}
+
+@media (max-width: 910px) {
+    .navbar {
+        &__wrapp {
+            height: 94px;
+        }
+        &__menu {
+            display: none;
+        }
+        &__logo {
+            transform: translateY(20px);
+            z-index: 10;
+        }
+    }
+    
+    .hero{
+        padding-top: 200px;
+        &__wrap {
+            align-items: center;
+            text-align: center;
+        }
+        &__shedule {
+            font-size: 10px;
+            writing-mode: initial;
+            transform: rotate(0) translateX(-50%);
+            left: 50%;
+            top: 160%;
+
+        }
+        &__social {   
+            display: flex;
+            transform: translateX(50%);
+            right: 50%;
+            top: 100%;
+            &-button {
+                width: 40px;
+                height: 40px;
+                margin-bottom: 20px;
+            }
+        }
+        &__button {
+            &-click {
+                margin: 0 20px;
+            }
+        }
+    }
+}
+
+@media (max-width: 700px) {
+    .navbar {
+        &__wrapp {
+            height: 80px;
+        }
+        &__logo {
+            transform: translateY(6px);
+        }
+    }
+
+    .hero{
+        &__button {
+            &-click {
+                margin: 5px 10px;
+            }
+        }
+    }
+
+
+    .menu-header {
+        top: 80px;
+        &-navigation {
+            flex-direction: column;
+            margin-top: 40px;
+        }
+        &__wrapper {
+            flex-basis: auto;
+            flex-direction: column;
+        }
+        &-link {
+            font-size: 35px;
+            letter-spacing: 8px;
+            @include Banny;
+        }
+      }
 }

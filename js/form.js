@@ -24,8 +24,7 @@ function setMinMaxDate() {
 setMinMaxDate();
 
 // Переменные для записи true при правильном заполнениии полей ввода
-let isPhoneValidated;
-let isPhoneValidatedSecond;
+let isPhoneValidated, isPhoneValidatedSecond;
 let isEmailValidated;
 let isEmailValidatedSecond;
 let isNameValidated;
