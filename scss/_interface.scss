@@ -55,7 +55,7 @@ img {
             font-size: 18px;
             line-height: 28px;
             max-width: 565px;
-            margin-bottom: 50px;
+            margin-bottom: 25px;
         }
         &__paragraph {
             font-size: 14px;
@@ -63,7 +63,6 @@ img {
             &_even{
                 color: darken($color: #fff, $amount: 10%);
             }
-            //color: lighten( #fff,80%);
         }
     }
     &-name {

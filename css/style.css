@@ -117,7 +117,7 @@ img {
   font-size: 18px;
   line-height: 28px;
   max-width: 565px;
-  margin-bottom: 50px;
+  margin-bottom: 25px;
 }
 
 .section-item__paragraph {
@@ -593,7 +593,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 }
 
 .header {
-  background: url("/img/header/bg.png") no-repeat top center/cover;
+  background: url("../img/header/bg.png") no-repeat top center/cover;
   position: relative;
   overflow: hidden;
 }
@@ -951,6 +951,9 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     -webkit-transform: translateY(6px);
             transform: translateY(6px);
   }
+  .hero {
+    padding-top: 100px;
+  }
   .hero__button-click {
     margin: 5px 10px;
   }
@@ -980,11 +983,11 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 }
 
 .team {
-  background: url("../../img/team/team-bg.png") no-repeat top center/cover;
+  background: url("../img/team/team-bg.png") no-repeat top center/cover;
 }
 
 .specialities {
-  background: url("../../img/specialities/bsckground.png") no-repeat top center/cover;
+  background: url("../img/specialities/bsckground.png") no-repeat top center/cover;
 }
 
 .slick-list {
@@ -1237,7 +1240,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 }
 
 .events {
-  background: url("../../img/events/bg.png") no-repeat top center/cover;
+  background: url("../img/events/bg.png") no-repeat top center/cover;
 }
 
 .events__image-text {

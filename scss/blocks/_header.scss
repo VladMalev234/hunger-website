@@ -1,5 +1,5 @@
 .header {
-    background: url('/img/header/bg.png') no-repeat top center / cover;
+    background: url('../img/header/bg.png') no-repeat top center / cover;
     position: relative;
     overflow: hidden;
 }
@@ -314,6 +314,7 @@
     }
 
     .hero{
+        padding-top: 100px;
         &__button {
             &-click {
                 margin: 5px 10px;
