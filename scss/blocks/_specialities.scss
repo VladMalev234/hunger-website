@@ -124,8 +124,14 @@
 }
 
 @media (max-width: 910px) {
-    .container {
-        max-width: 100%;
-        padding: 0 15px;
+    .slider {
+        &-item {
+            flex-direction: column;
+            justify-content: center;
+            //display: block;
+            & .section-item {
+                flex-basis: auto;
+            }
+        }
     }
 }

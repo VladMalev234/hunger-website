@@ -621,6 +621,14 @@ input[type="time"] {
             box-shadow: 0px 0px 50px rgba(0, 0, 0, 0.5), inset 0px 0px 50px rgba(0, 0, 0, 0.3);
     top: 32%;
   }
+  input[type="date"] {
+    display: block;
+    width: 378px;
+  }
+  input[type="time"] {
+    display: block;
+    width: 378px;
+  }
 }
 
 @supports (row-gap: 10px) and ((-webkit-column-gap: 10px) or (column-gap: 10px)) {
@@ -1100,9 +1108,18 @@ input[type="time"] {
 }
 
 @media (max-width: 910px) {
-  .container {
-    max-width: 100%;
-    padding: 0 15px;
+  .slider-item {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .slider-item .section-item {
+    -ms-flex-preferred-size: auto;
+        flex-basis: auto;
   }
 }
 

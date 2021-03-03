@@ -120,19 +120,13 @@ input {
     border-radius: 5px;
     outline: none;
     padding-left: 20px;
-    //cursor: pointer;
-    &[type="date"]{
-        display:block;
-        width: 100%;}
+    &[type="date"]{ display:block; width: 100%;}
     &[type="date"]::-webkit-datetime-edit-year-field{display: none;}
     &[type="date"]::-webkit-datetime-edit-month-field::after{content: "/"; display: block;}
     &[type="date"]::-webkit-datetime-edit-text{color: red;}
     &[type="date"]::-webkit-calendar-picker-indicator {background:transparent;
     width: 100%; cursor: pointer; height: 100%;}
-    &[type="time"]{display:block;
-        width: 100%;}
-    //&[type="time"]::-webkit-clear-button{display:none;}
-
+    &[type="time"]{display:block; width: 100%;}
 }
 
 
@@ -474,21 +468,14 @@ input {
     }
 
 }
+
+input {
+    &[type="date"]{ display:block; width: 378px;}
+    &[type="time"]{display:block; width: 378px;}
+}
 }
 
 @supports (row-gap: 10px) and (column-gap: 10px) {
  .form-group {margin: 5px;}
  .form-group_contact {margin: 5px;}
 }
-
-//@supports (row-gap: 10px) {
-//    .no {margin-bottom: 5px;}
-//}
-
-//@supports not  {
-//    .form {margin-right: 5px;}
-//   }
-   
-//   @supports (column-gap: 10px) {
-//       .no {margin-right: 5px;}
-//   }
