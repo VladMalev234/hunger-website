@@ -98,8 +98,11 @@ img {
 
 
 .button {
+    display: inline-block;
+    text-decoration: none;  
     width: 200px;
-    height: 60px;
+    padding: 24px 0;
+    //height: 60px;
     font-size: 12px;
     background: transparent;
     border: 1px solid #fff;
@@ -470,7 +473,7 @@ input {
 }
 
 input {
-    &[type="date"]{ display:block; width: 378px;}
+    &[type="date"]{display:block; width: 378px;}
     &[type="time"]{display:block; width: 378px;}
 }
 }

@@ -38,8 +38,8 @@ let inputDateValue;
 
 const urlForm = 'https://jsonplaceholder.typicode.com/users';
 
-// ставим по умолчанию disabled для кноаки
-submitAll.forEach(elem=> {
+// ставим по умолчанию disabled для кнопки
+submitAll.forEach(elem => {
     elem.disabled = true;
     elem.classList.add('disabled-color');
 })
@@ -57,12 +57,11 @@ inputAllContact.forEach((elem) => {
 //функция проверки селекта
 document.querySelector('.select').addEventListener('click', (e)=> {
     document.querySelector('.select__dropdown').classList.toggle('select__dropdown_open');
-
 });
+
 document.querySelectorAll('.select__option').forEach((element)=> {
     element.addEventListener('click', (e) => {
         let valueOfDataset =  e.target.dataset.values;
-        //console.log(e.target.getAttribute('data-values'));
         console.log(e.target.dataset.values);
         document.querySelector('#select-type').value = valueOfDataset;
         document.querySelector('.select_checked').innerText = valueOfDataset;
@@ -74,69 +73,72 @@ document.querySelectorAll('.select__option').forEach((element)=> {
     });
 })
 
-//записываем е для того чтобі оперделять єлемент на которій нажали при input
+//записываем е для того чтобы оперделять єлемент на который нажали при input
 function disabled(e) {
     // создаем переменную в которую записуем значение ближайшего родителя в который обернут инпут, для любого выбраного инпута
     let closestParent = e.target.parentNode;
+    const formGroupParent = closestParent.classList.contains('form-group');
+    const formGroupContactParent = closestParent.classList.contains('form-group_contact');
+    //console.log(closestParent);
   //проверяем какой этот тип  input
-    if(e.target.type == 'email') {
+    if(e.target.type === 'email') {
         // находим ближайшего родителя для выбраного input
         //проверяем  input на соответствие регулярному выражению
         if(regexEm.test(e.target.value)) {
-            // если у ближайшего родителя есть элемент  с классом alert
-            if(closestParent.classList.contains('form-group')){
-                //если подтвердилось то функция возвращае true в переменную
-                isEmailValidated = alertInputTrue(e.target, closestParent);
+        // проверяем содержит ли ближайший родитель class form-group
+            if(formGroupParent){
+                // если у ближайшего родителя есть элемент  с классом alert //если подтвердилось то функция возвращае true в переменную
+                isEmailValidated = alertInputTrue(e.target, closestParent) ;
             }
-            else if(closestParent.classList.contains('form-group_contact')){
+            else if(formGroupContactParent){
                 isEmailValidatedSecond = alertInputTrue(e.target, closestParent);
             }
             //если input не соответствие регулярному выражению
         } else {
-            if(closestParent.classList.contains('form-group')){
+            if(formGroupParent){
             //если подтвердилось то функция возвращае false в переменную
                 isEmailValidated = alertInputFalse(e.target, closestParent, submit);
             }
-            else if(closestParent.classList.contains('form-group_contact')){
+            else if(formGroupContactParent){
                 isEmailValidatedSecond = alertInputFalse(e.target, closestParent, submit);
             }
 
         }
-    } else if(e.target.type == 'text') {
+    } else if(e.target.type === 'text') {
         if(regexTe.test(e.target.value)) {
-            if(closestParent.classList.contains('form-group')){
+            if(formGroupParent){
                 isNameValidated = alertInputTrue(e.target, closestParent);
             }
-            else if(closestParent.classList.contains('form-group_contact')){
+            else if(formGroupContactParent){
                 //this.closest('input[type="submit"]');
                 isNameValidatedSecond = alertInputTrue(e.target, closestParent);
             }
         } else {
-            if(closestParent.classList.contains('form-group')){
+            if(formGroupParent){
                 //console.log("form",closestParent.parentNode.querySelector('input[type="submit"]'));
                 isNameValidated = alertInputFalse(e.target, closestParent, submit);
             }
-            else if(closestParent.classList.contains('form-group_contact')){
+            else if(formGroupContactParent){
                 isNameValidatedSecond = alertInputFalse(e.target, closestParent, submit);
             }
         }
-        } else if(e.target.type == 'tel') {
+        } else if(e.target.type === 'tel') {
             if(regexTel.test(e.target.value)) {
-                if(closestParent.classList.contains('form-group')){
+                if(formGroupParent){
                     isPhoneValidated = alertInputTrue(e.target, closestParent);
                 }
-                else if(closestParent.classList.contains('form-group_contact')){
+                else if(formGroupContactParent){
                     isPhoneValidatedSecond = alertInputTrue(e.target, closestParent);
                 }
             } else {
-                if(closestParent.classList.contains('form-group')){
+                if(formGroupParent){
                     isPhoneValidated = alertInputFalse(e.target, closestParent, submit);
                 }
-                else if(closestParent.classList.contains('form-group_contact')){
+                else if(formGroupContactParent){
                     isPhoneValidatedSecond = alertInputFalse(e.target, closestParent, submit);
                 }
                 }
-            } else if(e.target.type == 'date') {
+            } else if(e.target.type === 'date') {
                 //console.log(e.target.value);
                 if(e.target.value) {
                     console.log(e.target.value);
@@ -154,7 +156,7 @@ function disabled(e) {
                         isDateValidated  = alertInputFalse(e.target, closestParent, submit);
                     }
                 } 
-                else if(e.target.type == 'time') {
+                else if(e.target.type === 'time') {
                     // Проверка на то введена ли уже дата посещения
                     if(inputDateValue) {
                         if(e.target.value) {
@@ -163,7 +165,7 @@ function disabled(e) {
                             //текущее время
                             let timeValueForCheck = dateValue.getHours() + ':' + dateValue.getMinutes();
                             //текущая дата
-                            let dateValueForCheck = [dateValue.getFullYear()+ '', getMonthValue+'', getDatehValue+''];
+                            let dateValueForCheck = [dateValue.getFullYear() + '', getMonthValue+'', getDatehValue+''];
                             // преобразовываем массивы дат в строку и сравниваем их если они равны
                             if(inputDateValue.join() == dateValueForCheck.join()){
                                 //если введенное время больше текущего времени
@@ -256,7 +258,7 @@ function submitReqest (method, url, body = null, submitHere) {
         body: JSON.stringify(body),
         headers: headers,
     })
-    .then(response=> {
+    .then(response => {
         //проверяем полученные данные
         if(response.ok){
             // возвращаем данные в виде обьекто Promise идекодируем данные в формате json
@@ -268,14 +270,14 @@ function submitReqest (method, url, body = null, submitHere) {
              e.data = error;
              throw e;
          })
-    }).then(res=> {
+    }).then(res => {
         console.log(res);
-        alert(' Вы успешно зарегистрировались!');
+        alert('You have successfully registered');
         //после отправки результата обнуляем форму и дизейблим кнопку
         submitHere.disabled = true;
         submitHere.classList.add('disabled-color');
         submitHere.closest("form").reset();
-        // проверяем есть ли у нас селект или дата и обнуляем их к прежниму состоянию
+        // проверяем есть ли у нас селект или инпут с датой и обнуляем их к прежниму состоянию
         if(submitHere.closest("form").querySelector('input[name="select"]') || submitHere.closest("form").querySelector('input[type="date"]')) {
             formGroupDateLabel.innerText = 'Date (mm/dd)';
             document.querySelector('#select-type').value = "People";

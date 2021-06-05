@@ -29,16 +29,16 @@ function alertInputFalse(element, closestPerent, submit) {
         //console.log(element.type);
         switch(element.type){
             case 'email':
-            divE.innerText = `Поле ${element.type} должно содержать не мение 1 буквы до @ и .`;
+            divE.innerText = `The ${element.type} field should contain at least one letter before @ and .`;
             break;
             case 'text': 
-            divE.innerText = `Поле ${element.type} должно содержать не меньше 3 букв`;
+            divE.innerText = `The ${element.type} field should contain at least three letter`;
             break;
             case 'tel': 
-            divE.innerText = `Поле ${element.type} должно содержать не меньше 10 цифр`;
+            divE.innerText = `The ${element.type} field should contain at least ten numbers`;
             break;
             case 'date' || 'time' :
-            divE.innerHTML = `Поле ${e.target.type} должно быть заполнено`;
+            divE.innerHTML = `The ${e.target.type} field should be filled`;
 
         }
         //divE.innerHTML = `Поле ${element.type} должно содержать не мение 1 буквы до @ и .`;

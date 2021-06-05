@@ -122,11 +122,18 @@
 
     }
     &__arrow {
-        margin: 82px auto;
-        padding: 10px;
-        border-radius: 50%;
+        //transform: translateY(25px);
+        margin: 80px auto;
         max-width: 50px;
-        border: 1px solid rgba(255, 255, 255, 0.2);
+       
+        & a {
+            display: inline-block;
+            cursor: pointer;  
+            padding: 8px 10px;
+            border-radius: 50%;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transform: translateY(-7px);
+        }
         & img {
             padding: 10px 8px;
             border-radius: 50%;
@@ -212,8 +219,8 @@
             }
         }
         &__arrow {
-            & img {
-                padding: 9px 8px;
+            & a {
+                transform: translateY(-3px);
             }
         }
         &__logo {
@@ -227,7 +234,7 @@
     }
 }
 
-//  !Задаем после 991px
+//  !Задаем после 1110px
 @media (max-width: 1110px) {
     .navbar {
         &__wrapp {
@@ -253,7 +260,15 @@
         &-header {
             font-size: 70px;
         }
+        &__arrow {
+            & a {
+                transform: translateY(4px);
+            }
+        }
     }
+
+  
+
 }
 
 @media (max-width: 910px) {
@@ -300,6 +315,13 @@
                 margin: 0 20px;
             }
         }
+
+        &__arrow {
+            & a {
+                padding: 8px 9px;
+                transform: translateY(-2px);
+            }
+        }
     }
 }
 
@@ -320,6 +342,12 @@
                 margin: 5px 10px;
             }
         }
+        &__arrow {
+            & a {
+                //padding: 8px 9px;
+                transform: translateY(12px);
+            }
+        }
     }
 
 
@@ -327,11 +355,13 @@
         top: 80px;
         &-navigation {
             flex-direction: column;
-            margin-top: 40px;
+            margin-top: 40px;  
         }
         &__wrapper {
             flex-basis: auto;
             flex-direction: column;
+            height: 40vh;
+            justify-content: space-around;
         }
         &-link {
             font-size: 35px;
@@ -339,4 +369,25 @@
             @include Banny;
         }
       }
+}
+
+@media (max-width: 599px) {
+    .hero{
+        &__arrow {
+            & a {
+                padding: 7px 8px;
+                transform: translateY(2px);
+            }
+        }
+    }
+}
+
+@media (max-width: 475px) {
+    .hero{
+        &__arrow {
+            & a {
+                transform: translateY(-9px);
+            }
+        }
+    }
 }

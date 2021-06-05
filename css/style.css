@@ -166,8 +166,10 @@ img {
 }
 
 .button {
+  display: inline-block;
+  text-decoration: none;
   width: 200px;
-  height: 60px;
+  padding: 24px 0;
   font-size: 12px;
   background: transparent;
   border: 1px solid #fff;
@@ -799,11 +801,18 @@ input[type="time"] {
 }
 
 .hero__arrow {
-  margin: 82px auto;
-  padding: 10px;
-  border-radius: 50%;
+  margin: 80px auto;
   max-width: 50px;
+}
+
+.hero__arrow a {
+  display: inline-block;
+  cursor: pointer;
+  padding: 8px 10px;
+  border-radius: 50%;
   border: 1px solid rgba(255, 255, 255, 0.2);
+  -webkit-transform: translateY(-7px);
+          transform: translateY(-7px);
 }
 
 .hero__arrow img {
@@ -899,8 +908,9 @@ input[type="time"] {
   .hero__button-click {
     margin: 0 15px;
   }
-  .hero__arrow img {
-    padding: 9px 8px;
+  .hero__arrow a {
+    -webkit-transform: translateY(-3px);
+            transform: translateY(-3px);
   }
   .hero__logo {
     -webkit-transform: translateY(35px);
@@ -938,6 +948,10 @@ input[type="time"] {
   }
   .hero-header {
     font-size: 70px;
+  }
+  .hero__arrow a {
+    -webkit-transform: translateY(4px);
+            transform: translateY(4px);
   }
 }
 
@@ -989,6 +1003,11 @@ input[type="time"] {
   .hero__button-click {
     margin: 0 20px;
   }
+  .hero__arrow a {
+    padding: 8px 9px;
+    -webkit-transform: translateY(-2px);
+            transform: translateY(-2px);
+  }
 }
 
 @media (max-width: 700px) {
@@ -1004,6 +1023,10 @@ input[type="time"] {
   }
   .hero__button-click {
     margin: 5px 10px;
+  }
+  .hero__arrow a {
+    -webkit-transform: translateY(12px);
+            transform: translateY(12px);
   }
   .menu-header {
     top: 80px;
@@ -1022,11 +1045,29 @@ input[type="time"] {
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
+    height: 40vh;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
   }
   .menu-header-link {
     font-size: 35px;
     letter-spacing: 8px;
     font-family: 'Banny Round', sans-serif;
+  }
+}
+
+@media (max-width: 599px) {
+  .hero__arrow a {
+    padding: 7px 8px;
+    -webkit-transform: translateY(2px);
+            transform: translateY(2px);
+  }
+}
+
+@media (max-width: 475px) {
+  .hero__arrow a {
+    -webkit-transform: translateY(-9px);
+            transform: translateY(-9px);
   }
 }
 
